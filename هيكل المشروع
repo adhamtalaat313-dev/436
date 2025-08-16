@@ -1,0 +1,12 @@
+safe_nest/
+├─ lib/
+│  ├─ main.dart
+│  ├─ screens/
+│  │  ├─ home_screen.dart
+│  │  ├─ camera_screen.dart
+│  │  ├─ map_screen.dart
+│  │  └─ profile_screen.dart
+│  └─ models/
+│     └─ child_model.dart
+├─ pubspec.yaml
+└─ README.md
