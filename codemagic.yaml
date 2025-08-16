@@ -1,3 +1,21 @@
-git add codemagic.yaml 
-git commit -m 'إضافة سير العمل الأول' 
-git push
+workflows:
+  android-workflow:
+    name: Build Android App
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      vars:
+        BUILD_MODE: release
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build APK
+        script: flutter build apk --$BUILD_MODE
+    artifacts:
+      - build/app/outputs/flutter-apk/app-$BUILD_MODE.apk
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
+        on_success: always
+        on_failure: never
